@@ -6,11 +6,8 @@ class Battle < Sinatra::Base
   set :session_secret, 'here be dragons'
 
   get '/' do
-    'Hello world!'
+    'Testing infrastructure working!'
   end
 
-  get '/test' do
-    'shotgun'
-  end
-
+run! if app_file == $0
 end

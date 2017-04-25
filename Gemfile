@@ -8,3 +8,4 @@ gem 'rspec'
 end
 gem 'sinatra'
 gem 'shotgun'
+gem 'capybara'
