@@ -1,9 +1,9 @@
 require 'sinatra/base'
 require 'shotgun'
-
+require 'player'
 class Battle < Sinatra::Base
-enable :sessions
-set :session_secret, 'Beware of this dog.'
+# enable :sessions
+# set :session_secret, 'Beware of this dog.'
 
   get '/' do
     erb(:index)
@@ -19,15 +19,12 @@ set :session_secret, 'Beware of this dog.'
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     erb(:play)
-    # redirect '/victory' if
   end
 
-  post '/button' do
-    redirect '/victory'
-  end
-
-  get '/victory' do
-    erb(:victory)
+  get '/attack' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb(:attack)
   end
 
   run! if app_file == $0
