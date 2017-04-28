@@ -19,8 +19,16 @@ class Game
   end
 
   def loser?
-    $game.player1.hp == 0 || $game.player2.hp == 0
+    @game.player1.hp == 0 || @game.player2.hp == 0
   end
+
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+def self.instance
+  @game
+end
 
 
 end
