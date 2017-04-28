@@ -17,6 +17,7 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = Game.instance
+    erb :play
   end
 
   get '/attack' do

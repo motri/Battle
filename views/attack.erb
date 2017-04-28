@@ -1,11 +1,11 @@
 
-<h1> <%= $game.player1.name %>: <%= $game.player1.hp %>HP VS <%= $game.player2.name %>: <%= $game.player2.hp %>HP</h1>
+<h1> <%= @game.player1.name %>: <%= @game.player1.hp %>HP VS <%= @game.player2.name %>: <%= @game.player2.hp %>HP</h1>
 
 
-<h2> <%= $game.turn.name %> attacked <%= $game.not_in_turn.name%>!!!!</h2>
+<h2> <%= @game.turn.name %> attacked <%= @game.not_in_turn.name%>!!!!</h2>
 
-<h2><%= $game.not_in_turn.name %>'s turn!</h2>
+<h2><%= @game.not_in_turn.name %>'s turn!</h2>
 
-<form action="/attack">
+<form action="/attack" method="get">
         <input type = "submit" value = "Attack">
 </form>

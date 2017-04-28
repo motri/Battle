@@ -1,3 +1,5 @@
+require_relative './player'
+
 class Game
 
   attr_reader :player1, :player2, :turn, :not_in_turn
@@ -19,7 +21,8 @@ class Game
   end
 
   def loser?
-    @game.player1.hp == 0 || @game.player2.hp == 0
+
+    @player1.hp == 0 || @player2.hp == 0
   end
 
   def self.create(player1, player2)
