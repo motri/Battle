@@ -19,4 +19,10 @@ describe Battle, :type => :feature do
       click_button 'Attack'
       expect(page).to have_content "attacked"
     end
+
+    scenario 'loser message when one players hp is reaches zero' do
+      sign_in_and_play
+      19.times { click_button "Attack" }
+      expect(page).to have_content " Lost!"
+    end
   end

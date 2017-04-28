@@ -10,8 +10,8 @@ class Battle < Sinatra::Base
 
   post '/names' do
     $game = Game.new(params[:player1], params[:player2])
-    # $player1 = Player.new(params[:player1])
-    # $player2 = Player.new(params[:player2])
+    #  @player1 = Player.new(params[:player1])
+    #  @player2 = Player.new(params[:player2])
     redirect '/play'
   end
 
@@ -19,15 +19,23 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  post '/attack' do
-    redirect '/loser' if $game.player1.hp == 0 || $game.player2.hp == 0
+  get '/attack' do
     $game.attack
-     erb :attack
+    you_suck
+    erb :attack
    end
 
-   get '/loser' do
-     erb :loser
-   end
+
+    get '/loser' do
+      erb :loser
+    end
 
   run! if app_file == $0
+
+  private
+  
+   def you_suck
+     redirect '/loser' if $game.loser?
+   end
+
 end

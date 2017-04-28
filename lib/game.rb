@@ -18,4 +18,9 @@ class Game
     turn_switcher.reduce_hp
   end
 
+  def loser?
+    $game.player1.hp == 0 || $game.player2.hp == 0
+  end
+
+
 end
