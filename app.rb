@@ -3,15 +3,15 @@ require_relative './lib/player'
 require_relative './lib/game'
 
 class Battle < Sinatra::Base
-
   get '/' do
     erb :index
   end
 
   post '/names' do
-    @game = Game.create(params[:player1], params[:player2] )
-    #  @player1 = Player.new(params[:player1])
-    #  @player2 = Player.new(params[:player2])
+    player1 = Player.new(params[:player1])
+    params[:player2] == '' ? player2 = Ai.new :
+    player2 = Player.new(params[:player2])
+    @game = Game.create(player1, player2)
     redirect '/play'
   end
 
@@ -23,21 +23,14 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = Game.instance
     @game.attack
-    you_suck
+    redirect '/loser' if Game.instance.loser?
+
     erb :attack
-   end
+  end
 
+  get '/loser' do
+    erb :loser
+  end
 
-    get '/loser' do
-      erb :loser
-    end
-
-   run! if app_file == $0
-
-  private
-
-   def you_suck
-     redirect '/loser' if Game.instance.loser?
-   end
-
+  run! if app_file == $PROGRAM_NAME
 end

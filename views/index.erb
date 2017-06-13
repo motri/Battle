@@ -1,13 +1,40 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Teko|Fredericka+the+Great|Lobster" rel="stylesheet">
+
+<style>
+
+body {
+    color: red;
+    font-family: 'Fredericka the Great';
+    font-size: 40px;
+    margin-bottom: 0px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/eb/e5/0f/ebe50f7fb8b033f994a786643034be8a.gif");
+    background-size: contain;
+}
+
+#form {
+  font-size: 25px;
+}
+
+</style>
+
+<body>
+  <div class="container-fluid text-center">
+
 <h1>Welcome to Cage Wars!</h1>
 <h2>Give us your names!!</h2>
-<form action="/names" method="post" >
+<form action="/names" method="post" id="form" >
     <label for="player1">
-      First Warrior name
+      Player 1
     <input type="text" name="player1">
   </label>
   <label for="player2">
-      Second Warrior name
+      Player 2
   <input type="text" name="player2">
 </label>
     <input type="submit" value="Submit">
 </form>
+</div>
+</body>

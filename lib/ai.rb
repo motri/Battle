@@ -1,10 +1,9 @@
-# It understands player assets
-class Player
+# It understands automated player
+class Ai
   attr_reader :name, :hp
 
   HP_DEFAULT = 100
-
-  def initialize(name, hp = HP_DEFAULT)
+  def initialize(name = 'Computer', hp = HP_DEFAULT)
     @name = name
     @hp = hp
   end
