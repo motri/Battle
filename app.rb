@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/ai'
 
 class Battle < Sinatra::Base
   get '/' do
@@ -9,8 +10,7 @@ class Battle < Sinatra::Base
 
   post '/names' do
     player1 = Player.new(params[:player1])
-    params[:player2] == '' ? player2 = Ai.new :
-    player2 = Player.new(params[:player2])
+    params[:player2] == '' ? player2 = Ai.new : player2 = Player.new(params[:player2])
     @game = Game.create(player1, player2)
     redirect '/play'
   end
