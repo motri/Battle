@@ -14,3 +14,4 @@ Navigate to "localhost:3000" in your browser.
 * Rspec for testing.
 * Sinatra for simple web interaction.
 
+![signup page](https://www.imageupload.co.uk/images/2017/06/13/ScreenShot2017-06-13at09.54.07.png)
