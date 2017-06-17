@@ -1,3 +1,4 @@
+![Travis badge](https://travis-ci.org/motri/Battle.svg?branch=master)
 # Battle
 This is a basic single player battle game.
 
