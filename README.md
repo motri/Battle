@@ -1,3 +1,4 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/motri/Battle?branch=master)](https://bettercodehub.com/)
 ![Travis badge](https://travis-ci.org/motri/Battle.svg?branch=master)
 # Battle
 This is a basic single player battle game.
